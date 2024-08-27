@@ -1,0 +1,19 @@
+{
+  "name": "casa-de-cambio",
+  "version": "1.0.0",
+  "description": "El proyecto se basa en una casa de cambios realizado en Html, Css, Bootstrap, JavaScript y JQuery",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alejandro Martinez",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "http-server": "^14.1.1",
+    "jquery": "^3.7.1"
+  },
+  "devDependencies": {
+    "cypress": "^13.13.3"
+  }
+}
