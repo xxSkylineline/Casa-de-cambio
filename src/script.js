@@ -14,6 +14,7 @@ calendario.on('click',function(){
 );
 
 $muestraMonedas.on('click', function(){
+    
 
 
 function cargarValoresDeMonedas(){
