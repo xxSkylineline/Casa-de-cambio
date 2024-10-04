@@ -8,8 +8,7 @@ const $muestraMonedas = $('#mostrar-monedas');
 let fecha;
 
 calendario.on('click',function(){
-    let fechaActual = new Date().toISOString().split('T')[0]
-
+    let fechaActual = new Date().toISOString().split('T')[0];
    return calendario.attr('max', fechaActual)}
 )
 
