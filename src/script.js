@@ -11,6 +11,7 @@ calendario.on('click',function(){
     let fechaActual = new Date().toISOString().split('T')[0];
    return calendario.attr('max', fechaActual)}
 )
+);
 
 $muestraMonedas.on('click', function(){
 
