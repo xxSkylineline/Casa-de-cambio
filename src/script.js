@@ -2,19 +2,37 @@
 
 const link = 'https://api.exchangeratesapi.io/v1/';
 const access_key = 'd564d07b265b1622a5106983bf38220d';
-
-const calendario = $('#fecha');
+const $fecha = $('#fecha');
 const $muestraMonedas = $('#mostrar-monedas');
-let fecha;
 
-calendario.on('click',function(){
+
+$fecha.on('click',function(){
     let fechaActual = new Date().toISOString().split('T')[0];
-   return calendario.attr('max', fechaActual)}
-)
+   return $fecha.attr('max', fechaActual)}
 );
 
 $muestraMonedas.on('click', function(){
-    
+    if($fecha.val() != ''){
+        cargarValoresDeMonedas()
+    }else{
+        $fecha.addClass('border border-danger')
+    }
+   
+});
+
+$('#listado-monedas').on('click', '.moneda', function(){
+    console.log("hiciste click")
+})
+
+function actualizar(){
+
+}
+
+function cambiarValoresDivisas(base, valorMoneda){
+    let resultado;
+        resultado = valorMoneda / base
+    return resultado
+}
 
 
 function cargarValoresDeMonedas(){
@@ -23,9 +41,9 @@ function cargarValoresDeMonedas(){
     let $listaValorMonedas = $('#listado-monedas');
     $listaValorMonedas.text('')
 
-    fecha = calendario.val();
+    
 
-    fetch(link+fecha+'?access_key='+access_key)
+    fetch(link+$fecha.val()+'?access_key='+access_key)
         .then(res => res.json())
         .then(resJSON => {
             $('#base').text(`La base es: ${resJSON.base}`);
@@ -46,5 +64,12 @@ function cargarValoresDeMonedas(){
         });
 }
 
+function validarFecha(){
+    if(fecha != '' ){
+        return true
+    }else{
+        return false
+    }
+}
 
 
