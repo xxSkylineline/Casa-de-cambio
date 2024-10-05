@@ -1,3 +1,4 @@
+
 /// <reference types = 'jquery'/>
 
 const link = 'https://api.exchangeratesapi.io/v1/';
@@ -71,5 +72,6 @@ function validarFecha(){
         return false
     }
 }
+
 
 
